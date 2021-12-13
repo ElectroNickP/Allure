@@ -28,7 +28,6 @@ public class IssuesWebTest {
     }
 
     @Test
-    @TM4J("AE-T3")
     @Microservice("Billing")
     @Story("Create new issue")
     @JiraIssues({@JiraIssue("AE-8")})
