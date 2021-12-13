@@ -30,7 +30,7 @@ public class IssuesWebTest {
     @Test
     @Microservice("Billing")
     @Story("Create new issue")
-    @JiraIssues({@JiraIssue("AE-8")})
+    @JiraIssues({@JiraIssue("AE-9")})
     @Tags({@Tag("web"), @Tag("critical")})
     @DisplayName("Creating new issue by authorized user")
     public void shouldCreateIssue() {
@@ -38,7 +38,6 @@ public class IssuesWebTest {
         steps.createIssueWithTitle(ISSUE_TITLE);
         steps.shouldSeeIssueWithTitle(ISSUE_TITLE);
     }
-
 
     @AfterEach
     public void stopDriver() {
