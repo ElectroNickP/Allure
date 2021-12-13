@@ -40,32 +40,6 @@ public class IssuesWebTest {
         steps.shouldSeeIssueWithTitle(ISSUE_TITLE);
     }
 
-    @Test
-    @TM4J("AE-T4")
-    @Microservice("Repository")
-    @Story("Create new issue")
-    @Tags({@Tag("web"), @Tag("regress")})
-    @JiraIssues({@JiraIssue("AE-8")})
-    @DisplayName("Adding note to advertisement")
-    public void shouldAddLabelToIssue() {
-        steps.openIssuesPage(OWNER, REPO);
-        steps.createIssueWithTitle(ISSUE_TITLE);
-        steps.shouldSeeIssueWithTitle(ISSUE_TITLE);
-    }
-
-    @Test
-    @TM4J("AE-T5")
-    @Microservice("Repository")
-    @Story("Close existing issue")
-    @Tags({@Tag("web"), @Tag("regress")})
-    @JiraIssues({@JiraIssue("AE-8")})
-    @DisplayName("Closing existing issue by authorized user")
-    public void shouldCloseIssue() {
-        steps.openIssuesPage(OWNER, REPO);
-        steps.createIssueWithTitle(ISSUE_TITLE);
-        steps.closeIssueWithTitle(ISSUE_TITLE);
-        steps.shouldNotSeeIssueWithTitle(ISSUE_TITLE);
-    }
 
     @AfterEach
     public void stopDriver() {
