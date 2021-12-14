@@ -27,7 +27,9 @@ public class IssuesWebTest {
         steps.startDriver();
     }
 
+
     @Test
+    @AllureId("90354")
     @Microservice("Billing")
     @Story("Create new issue")
     @JiraIssues({@JiraIssue("AE-8")})
