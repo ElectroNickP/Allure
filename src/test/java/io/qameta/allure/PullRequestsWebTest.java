@@ -10,9 +10,6 @@ import org.junit.jupiter.api.Test;
 /**
  * @author eroshenkoam (Artem Eroshenko).
  */
-@Layer("web")
-@Owner("eroshenkoam")
-@Feature("Pull Requests")
 public class PullRequestsWebTest {
 
     private static final String OWNER = "allure-framework";

@@ -8,9 +8,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static io.qameta.allure.Allure.parameter;
 
-@Layer("rest")
-@Owner("baev")
-@Feature("Issues")
 public class IssuesRestTest {
 
     private static final String OWNER = "allure-framework";
