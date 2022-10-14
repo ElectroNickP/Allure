@@ -12,7 +12,6 @@ public class IssuesRestTest {
 
     private static final String OWNER = "allure-framework";
     private static final String REPO = "allure2";
-
     private final RestSteps steps = new RestSteps();
 
     @Test
