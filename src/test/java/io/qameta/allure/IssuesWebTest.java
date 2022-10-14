@@ -28,9 +28,6 @@ public class IssuesWebTest {
     }
 
     @Test
-    @TM4J("AE-T3")
-    @Microservice("Billing")
-    @Story("Create new issue")
     @JiraIssues({@JiraIssue("AD-3")})
     @Tags({@Tag("web"), @Tag("critical")})
     @DisplayName("Creating new issue by authorized user")
@@ -41,11 +38,7 @@ public class IssuesWebTest {
     }
 
     @Test
-    @TM4J("AE-T4")
-    @Microservice("Repository")
-    @Story("Create new issue")
     @Tags({@Tag("web"), @Tag("regress")})
-    @JiraIssues({@JiraIssue("AD-4")})
     @DisplayName("Adding note to advertisement")
     public void shouldAddLabelToIssue() {
         steps.openIssuesPage(OWNER, REPO);
@@ -54,11 +47,7 @@ public class IssuesWebTest {
     }
 
     @Test
-    @TM4J("AE-T5")
-    @Microservice("Repository")
-    @Story("Close existing issue")
     @Tags({@Tag("web"), @Tag("regress")})
-    @JiraIssues({@JiraIssue("AD-5")})
     @DisplayName("Closing existing issue by authorized user")
     public void shouldCloseIssue() {
         steps.openIssuesPage(OWNER, REPO);

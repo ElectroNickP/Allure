@@ -2,6 +2,7 @@ package io.qameta.allure;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -17,33 +18,21 @@ public class IssuesRestTest {
 
     private final RestSteps steps = new RestSteps();
 
-    @TM4J("AE-T1")
-    @Story("Create new issue")
-    @Microservice("Billing")
+    @Test
     @Tags({@Tag("api"), @Tag("smoke")})
-    @JiraIssues({@JiraIssue("AD-2")})
     @ParameterizedTest(name = "Create issue via api")
     @ValueSource(strings = {"First Note", "Second Note"})
     public void shouldCreateUserNote(String title) {
-        parameter("owner", OWNER);
-        parameter("repo", REPO);
-        parameter("title", title);
 
         steps.createIssueWithTitle(OWNER, REPO, title);
         steps.shouldSeeIssueWithTitle(OWNER, REPO, title);
     }
 
-    @TM4J("AE-T2")
-    @Story("Close existing issue")
-    @Microservice("Repository")
+    @Test
     @Tags({@Tag("api"), @Tag("regress")})
-    @JiraIssues({@JiraIssue("AD-1")})
     @ParameterizedTest(name = "Close issue via api")
     @ValueSource(strings = {"First Note", "Second Note"})
     public void shouldDeleteUserNote(String title) {
-        parameter("owner", OWNER);
-        parameter("repo", REPO);
-        parameter("title", title);
 
         steps.createIssueWithTitle(OWNER, REPO, title);
         steps.closeIssueWithTitle(OWNER, REPO, title);
