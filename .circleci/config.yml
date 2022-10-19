@@ -35,3 +35,5 @@ jobs:
           chmod +x ./allurectl
       - run: ./allurectl job-run plan --output-file ${ALLURE_TESTPLAN_PATH}
       - run: ./allurectl watch -- ./gradlew test -Pbrowser=${BROWSER} -Ptest_host=${TESTING_HOST}
+      - run: ./allurectl job-run env
+
