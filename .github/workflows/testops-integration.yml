@@ -28,10 +28,11 @@ jobs:
           allure-token: ${{ secrets.ALLURE_TOKEN }}
           allure-project-id: ${{ secrets.ALLURE_PROJECT_ID }}
       - run: allurectl job-run plan --output-file ${ALLURE_TESTPLAN_PATH}
+        env:
+          ALLURE_TESTPLAN_PATH: "./testplan.json"
       - run: allurectl watch -- ./gradlew clean test
         env:
           ALLURE_RESULTS: build/allure-results
-          ALLURE_TESTPLAN_PATH: "./testplan.json"
           TEST_ENDPOINT: ${{ github.event.inputs.TEST_ENDPOINT }}
           TEST_BROWSER: ${{ github.event.inputs.TEST_BROWSER }}
       - name: Get environments
