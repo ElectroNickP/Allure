@@ -35,6 +35,7 @@ jobs:
       - run: allurectl job-run plan --output-file ${ALLURE_TESTPLAN_PATH}
         env:
           ALLURE_TESTPLAN_PATH: "./testplan.json"
+          ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
       - run: allurectl watch -- ./gradlew clean test
         env:
           ALLURE_RESULTS: build/allure-results
