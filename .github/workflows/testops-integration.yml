@@ -12,6 +12,11 @@ on:
         description: "Browser for tests"
         required: true
         default: chrome
+      ALLURE_JOB_RUN_ID:
+        description: "service parameter, leave empty"
+        required: false
+        default: ''
+
 
 jobs:
   all-tests:
